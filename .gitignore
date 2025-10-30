@@ -16,9 +16,9 @@ build/
 *.egg-info/
 
 # Output files
-submission.csv
-analysis.csv
-*.csv
+#submission.csv
+#analysis.csv
+#*.csv
 
 # IDE
 .vscode/

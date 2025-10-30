@@ -6,7 +6,7 @@ from langchain_ollama import ChatOllama
 
 def process(text, examples):
 
-    llm = ChatUpstage(model="solar-pro2", temperature=0.1)
+    llm = ChatUpstage(model="solar-pro2", temperature=0.0, reasoning_effort="high")
     #llm = ChatOllama(model="alibayram/Qwen3-30B-A3B-Instruct-2507")
     #llm = ChatOllama(model="gpt-oss:120b-cloud", temperature=0.1)
     
@@ -15,16 +15,17 @@ def process(text, examples):
     )
 
 
-    print(sample_section)
+    #print(sample_section)
 
     # 프롬프트 
     selectCategory = """
     # 지시
     - 당신은 한국어 문장 검토및 교정 전문가입니다.
     - 다음 규칙에 따라 원문을 교정하세요.
-    - 예시를 참고하여 맞춤법, 띄어쓰기, 문장 부호, 문법을 자연스럽게 교정합니다.
+    - 맞춤법, 띄어쓰기, 문장 부호, 문법을 자연스럽게 교정합니다.
     - 어떤 경우에도 설명이나 부가적인 내용은 포함하지 않습니다.
     - 오직 교정된 문장만 출력합니다.
+    - Let's think step by step.
 
 
     # 예시
